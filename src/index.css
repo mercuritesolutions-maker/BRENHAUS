@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #F5F0E8;
+  --color-accent: #4A9B8E;
+  --color-accent-dark: #3a7d73;
+  --color-warm: #6B4226;
+  --color-text-dark: #2C1810;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Lato", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-text-dark font-sans selection:bg-accent/30 selection:text-text-dark;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .bg-texture {
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(74, 155, 142, 0.2);
+  }
+}
