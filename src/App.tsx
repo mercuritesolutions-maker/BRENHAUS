@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { MessageCircle } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 // Components
 import { Navbar } from './components/Navbar';
@@ -118,6 +119,7 @@ export default function App() {
           Chat with us
         </span>
       </motion.a>
+      <Analytics />
     </div>
   );
 }
