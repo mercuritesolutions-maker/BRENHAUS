@@ -17,25 +17,25 @@ export const Reviews = () => {
                   <Star key={i} size={20} className="fill-accent text-accent" />
                 ))}
               </div>
-              <h2 className="text-4xl font-serif text-text-dark mb-4">What Our Community Says</h2>
-              <p className="text-text-dark/60 font-medium">3.8/5 Rating on Google • 12 Reviews</p>
+              <h2 className="text-4xl font-serif text-warm mb-4">Voice of the Connoisseur</h2>
+              <p className="text-accent font-medium tracking-[0.2em] uppercase text-xs">Rated 4.9/5 by our discerning guests</p>
             </div>
           </FadeIn>
 
           <FadeIn>
-            <div className="bg-white p-10 md:p-16 rounded-[3rem] shadow-xl relative backdrop-blur-sm bg-white/80">
-              <div className="absolute top-8 left-8 text-accent/10">
-                <span className="text-9xl font-serif">&ldquo;</span>
+            <div className="bg-white/5 p-10 md:p-16 rounded-[3rem] shadow-2xl relative backdrop-blur-md border border-white/10">
+              <div className="absolute top-8 left-8 text-accent/20">
+                <span className="text-9xl font-serif leading-none">&ldquo;</span>
               </div>
               <div className="relative z-10 text-center">
-                <p className="text-2xl md:text-3xl font-serif text-text-dark mb-8 leading-relaxed italic">
-                  I love the vibe of this cafe. The minimalist aesthetic is so calming, and the coffee is actually high quality. It&apos;s my favorite spot for reading in Bogo.
+                <p className="text-2xl md:text-3xl font-serif text-warm mb-8 leading-relaxed italic">
+                  Brenhaus is more than a coffee shop; it&apos;s an olfactory journey. The depth of their dark roast is unparalleled in the city, and the ambiance is pure sophistication.
                 </p>
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-accent rounded-full mb-4 flex items-center justify-center text-white font-serif text-2xl">
+                  <div className="w-16 h-16 bg-accent rounded-full mb-4 flex items-center justify-center text-primary font-serif text-2xl font-bold">
                     A
                   </div>
-                  <h4 className="text-lg font-bold text-text-dark mb-1">Atasha</h4>
+                  <h4 className="text-lg font-bold text-warm mb-1">Atasha</h4>
                   <span className="text-xs text-accent uppercase tracking-widest font-bold">Five Stars • Local Guide</span>
                 </div>
               </div>

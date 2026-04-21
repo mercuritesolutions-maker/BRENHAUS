@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #F5F0E8;
-  --color-accent: #4A9B8E;
-  --color-accent-dark: #3a7d73;
-  --color-warm: #6B4226;
-  --color-text-dark: #2C1810;
+  --color-primary: #0F0A09;
+  --color-accent: #D4AF37;
+  --color-accent-dark: #AA8C2C;
+  --color-warm: #FDFBF7;
+  --color-text-dark: #0F0A09;
+  --color-text-light: #FDFBF7;
   
   --font-serif: "Playfair Display", serif;
   --font-sans: "Lato", sans-serif;
@@ -13,7 +14,7 @@
 
 @layer base {
   body {
-    @apply bg-primary text-text-dark font-sans selection:bg-accent/30 selection:text-text-dark;
+    @apply bg-primary text-warm font-sans selection:bg-accent/30 selection:text-primary;
     scroll-behavior: smooth;
   }
 

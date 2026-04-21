@@ -30,12 +30,12 @@ export const Vibe = () => {
     }
   ];
   return (
-    <section id="vibe" className="py-24 bg-white/50">
+    <section id="vibe" className="py-24 bg-primary">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <FadeIn>
-            <span className="text-accent font-medium uppercase tracking-widest text-xs mb-4 block">The Experience</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-text-dark mb-6">Awaken Your Senses</h2>
+            <span className="text-accent font-medium uppercase tracking-[0.3em] text-xs mb-4 block">The Experience</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-warm mb-6">The Art of the Brew</h2>
             <div className="w-24 h-1 bg-accent/30 mx-auto rounded-full" />
           </FadeIn>
         </div>
@@ -43,21 +43,22 @@ export const Vibe = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {experiences.map((item, idx) => (
             <FadeIn key={item.title} delay={idx * 0.1}>
-              <div className="group h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-warm/5">
-                <div className="h-48 overflow-hidden">
+              <div className="group h-full bg-white/5 rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-500 border border-white/5">
+                <div className="h-48 overflow-hidden relative">
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale-[0.2] contrast-[1.1]"
                     referrerPolicy="no-referrer"
                   />
+                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
                 <div className="p-8">
-                  <div className="mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-serif text-text-dark mb-3">
+                  <div className="mb-4 p-3 bg-accent/10 w-fit rounded-xl">{item.icon}</div>
+                  <h3 className="text-xl font-serif text-warm mb-3 italic">
                     {item.title}
                   </h3>
-                  <p className="text-text-dark/70 text-sm leading-relaxed">
+                  <p className="text-warm/90 text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

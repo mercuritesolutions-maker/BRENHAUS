@@ -14,31 +14,30 @@ export const Hero = ({ setOrderMode, handleNavLinkClick }: HeroProps) => {
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/514248163_122137353248920168_3971601876015675934_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeHF0buCdjd7vWE4poUAhyGvottAsSWUzLmi20CxJZTMuQVkarAy_aN4bRIK8theoqRctuSyyZd21sqVkY07XQi9&_nc_ohc=RBsxPdi6XzgQ7kNvwFMypaZ&_nc_oc=AdoKfTrXY58BadcLcfD2OlWg9fzeyCdhqKxY2OiUJwOYAarI4xZh7llN4qGGC5b6E8lIkXCNA1DoqwP82CVP3Im_&_nc_pt=1&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=dcrX3hDNH6sUW4YDaAb2-Q&_nc_ss=7a3a8&oh=00_Af0r7Ta1SxJIf8exWVna3te39TGpB_GXHSd9siBzd0z1gw&oe=69E8CB67"
-          alt="Knoah Mari Interior"
+          src="/hero-bg.png"
+          alt="Brenhaus Coffee Interior"
           className="w-full h-full object-cover transform scale-105"
-          referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-text-dark/40" />
+        <div className="absolute inset-0 bg-primary/60" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 text-center text-primary">
+      <div className="relative z-10 container mx-auto px-6 text-center text-warm">
         <FadeIn>
-          <span className="inline-block px-4 py-1 mb-6 border border-primary/30 rounded-full text-xs uppercase tracking-widest bg-primary/10 backdrop-blur-sm">
-            Est. 2024 • San Vicente St
+          <span className="inline-block px-4 py-1 mb-6 border border-accent/30 rounded-full text-xs uppercase tracking-[0.3em] bg-accent/5 backdrop-blur-sm text-accent">
+            EST. 2024 • THE DARK ROAST
           </span>
           <h1 className="text-5xl md:text-8xl font-serif mb-6 leading-tight">
-            More than just a <br />
-            <span className="italic">cup of coffee</span>
+            Artistry in <br />
+            <span className="italic text-accent">every bean</span>
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-90 font-light leading-relaxed">
-            Every brew at Knoah Mari is a memory in the making.
-            Step into a space where artisanal espresso meets heartfelt charm.
+          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-80 font-light leading-relaxed">
+            Welcome to Brenhaus Coffee. Where premium artisanal roasting 
+            meets the sophisticated comfort of a modern sanctuary.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => setOrderMode(true)}
-              className="px-8 py-4 bg-accent hover:bg-accent-dark text-white rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group shadow-lg shadow-accent/20"
+              className="px-8 py-4 bg-accent hover:bg-accent-dark text-primary rounded-full transition-all duration-300 transform hover:scale-105 flex items-center gap-2 group shadow-lg shadow-accent/10 font-bold"
             >
               Order Online
               <ShoppingCart size={18} className="translate-y-[-1px]" />
@@ -46,7 +45,7 @@ export const Hero = ({ setOrderMode, handleNavLinkClick }: HeroProps) => {
             <a
               href="#visit"
               onClick={(e) => handleNavLinkClick(e, '#visit')}
-              className="px-8 py-4 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 backdrop-blur-md rounded-full transition-all duration-300"
+              className="px-8 py-4 bg-warm/5 hover:bg-warm/10 text-warm border border-warm/20 backdrop-blur-md rounded-full transition-all duration-300"
             >
               Plan your visit
             </a>
@@ -58,11 +57,11 @@ export const Hero = ({ setOrderMode, handleNavLinkClick }: HeroProps) => {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary opacity-50"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-warm opacity-50"
       >
         <div className="flex flex-col items-center">
           <span className="text-[10px] uppercase tracking-widest mb-2">Scroll</span>
-          <div className="w-px h-12 bg-primary/50" />
+          <div className="w-px h-12 bg-warm/50" />
         </div>
       </motion.div>
     </section>

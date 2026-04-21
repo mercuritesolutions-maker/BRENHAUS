@@ -70,7 +70,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-texture">
+    <div className="relative min-h-screen bg-primary">
       <Navbar 
         isScrolled={isScrolled} 
         isMenuOpen={isMenuOpen} 
@@ -107,16 +107,16 @@ export default function App() {
 
       {/* Floating Messenger Button */}
       <motion.a 
-        href="https://www.facebook.com/messages/t/61577605052674"
+        href="#"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-6 right-6 z-[60] p-4 bg-accent text-white rounded-full shadow-2xl shadow-accent/40 flex items-center gap-2 group"
+        className="fixed bottom-6 right-6 z-[60] p-4 bg-accent text-primary rounded-full shadow-2xl shadow-accent/40 flex items-center gap-2 group"
       >
         <MessageCircle size={24} />
         <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-sm font-bold">
-          Chat with us
+          Connect with us
         </span>
       </motion.a>
       <Analytics />

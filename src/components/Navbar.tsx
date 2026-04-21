@@ -20,10 +20,10 @@ export const Navbar = ({ isScrolled, isMenuOpen, setIsMenuOpen, setOrderMode, ha
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-primary/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-primary/90 backdrop-blur-md shadow-sm py-4 border-b border-white/5' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="font-serif text-2xl font-bold tracking-tight text-text-dark">
-          KNOAH MARI
+        <a href="#" className="font-serif text-2xl font-bold tracking-[0.2em] text-accent">
+          BRENHAUS
         </a>
 
         {/* Desktop Nav */}
@@ -33,7 +33,7 @@ export const Navbar = ({ isScrolled, isMenuOpen, setIsMenuOpen, setOrderMode, ha
               key={link.name} 
               href={link.href}
               onClick={(e) => handleNavLinkClick(e, link.href)}
-              className="group relative text-sm font-medium hover:text-accent transition-colors duration-200 py-2"
+              className="group relative text-sm font-medium text-warm hover:text-accent transition-colors duration-200 py-2"
             >
               {link.name}
               <motion.span 
@@ -44,7 +44,7 @@ export const Navbar = ({ isScrolled, isMenuOpen, setIsMenuOpen, setOrderMode, ha
           ))}
           <button 
             onClick={() => setOrderMode(true)}
-            className="px-6 py-2 bg-accent text-white rounded-full text-xs font-bold hover:bg-accent-dark transition-all transform hover:scale-105"
+            className="px-6 py-2 bg-accent text-primary rounded-full text-xs font-bold hover:bg-accent-dark transition-all transform hover:scale-105"
           >
             Order Online
           </button>
@@ -52,7 +52,7 @@ export const Navbar = ({ isScrolled, isMenuOpen, setIsMenuOpen, setOrderMode, ha
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden p-2 text-text-dark"
+          className="md:hidden p-2 text-warm"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -73,7 +73,7 @@ export const Navbar = ({ isScrolled, isMenuOpen, setIsMenuOpen, setOrderMode, ha
                 <a 
                   key={link.name} 
                   href={link.href}
-                  className="text-xl font-serif text-text-dark border-b border-warm/5 pb-2"
+                  className="text-xl font-serif text-warm border-b border-warm/5 pb-2"
                   onClick={(e) => handleNavLinkClick(e, link.href)}
                 >
                   {link.name}
@@ -81,7 +81,7 @@ export const Navbar = ({ isScrolled, isMenuOpen, setIsMenuOpen, setOrderMode, ha
               ))}
               <button 
                 onClick={() => { setOrderMode(true); setIsMenuOpen(false); }}
-                className="w-full px-6 py-4 bg-accent text-white rounded-2xl text-lg font-bold shadow-lg"
+                className="w-full px-6 py-4 bg-accent text-primary rounded-2xl text-lg font-bold shadow-lg"
               >
                 Order Online
               </button>
