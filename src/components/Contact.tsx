@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { Mail, MessageCircle, ArrowRight, Loader2, CheckCircle } from 'lucide-react';
 import { FadeIn } from './ui/FadeIn';
 
@@ -79,7 +80,12 @@ export const Contact = () => {
             <FadeIn delay={0.2}>
               <form onSubmit={handleSubmit} className="bg-white/5 p-8 md:p-10 rounded-[2.5rem] border border-white/10 shadow-2xl backdrop-blur-md">
                 <div className="space-y-6">
-                  <div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                  >
                     <label htmlFor="name" className="block text-xs uppercase tracking-widest font-bold text-warm/70 mb-2">Full Name</label>
                     <input 
                       required
@@ -90,8 +96,13 @@ export const Contact = () => {
                       placeholder="John Doe"
                       className="w-full px-6 py-4 bg-primary border border-white/10 rounded-2xl text-warm focus:outline-none focus:border-accent focus:ring-4 focus:ring-accent/5 transition-all"
                     />
-                  </div>
-                  <div>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
                     <label htmlFor="email" className="block text-xs uppercase tracking-widest font-bold text-warm/70 mb-2">Email Address</label>
                     <input 
                       required
@@ -102,8 +113,13 @@ export const Contact = () => {
                       placeholder="john@example.com"
                       className="w-full px-6 py-4 bg-primary border border-white/10 rounded-2xl text-warm focus:outline-none focus:border-accent focus:ring-4 focus:ring-accent/5 transition-all"
                     />
-                  </div>
-                  <div>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                  >
                     <label htmlFor="message" className="block text-xs uppercase tracking-widest font-bold text-warm/70 mb-2">Your Message</label>
                     <textarea 
                       required
@@ -114,9 +130,11 @@ export const Contact = () => {
                       placeholder="Tell us something..."
                       className="w-full px-6 py-4 bg-primary border border-white/10 rounded-2xl text-warm focus:outline-none focus:border-accent focus:ring-4 focus:ring-accent/5 transition-all resize-none"
                     ></textarea>
-                  </div>
+                  </motion.div>
                   
-                  <button 
+                  <motion.button 
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     type="submit" 
                     disabled={status === 'loading'}
                     className={`w-full py-5 rounded-2xl font-bold tracking-wide transition-all shadow-lg flex items-center justify-center gap-2 ${
@@ -128,7 +146,7 @@ export const Contact = () => {
                     {status === 'idle' && 'Send Message'}
                     {status === 'error' && 'Try Again'}
                     {status !== 'loading' && status !== 'idle' ? null : <ArrowRight size={20} />}
-                  </button>
+                  </motion.button>
                   
                   {status === 'success' && (
                     <p className="text-center text-sm text-green-600 font-medium">Message sent successfully!</p>

@@ -19,7 +19,7 @@ export default async function handler(
 
   try {
     const data = await resend.emails.send({
-      from: 'Knoah Mari Contact <onboarding@resend.dev>', // Update this with your verified domain in Resend
+      from: 'Brenhaus Coffee Contact <onboarding@resend.dev>', // Update this with your verified domain in Resend
       to: [process.env.CONTACT_EMAIL_RECEIVER || 'le.advena08@gmail.com'],
       subject: `New Message from ${name} via Website`,
       replyTo: email,

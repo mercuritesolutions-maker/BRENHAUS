@@ -1,5 +1,7 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { FadeIn } from './ui/FadeIn';
+import { PuzzleImage } from './ui/PuzzleImage';
 
 export const About = () => {
   return (
@@ -33,21 +35,23 @@ export const About = () => {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.2}>
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative z-10">
-                <img
-                  src="https://i.pinimg.com/736x/82/41/81/8241813c95e331dc8a04bbefb3ff72c9.jpg"
-                  alt="Artisanal Coffee"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-10 -right-10 w-48 h-48 border-2 border-accent/20 rounded-[2rem] -z-0" />
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-warm/10 rounded-full blur-2xl" />
-            </div>
-          </FadeIn>
+          <div className="relative">
+            <PuzzleImage 
+              src="https://i.pinimg.com/736x/82/41/81/8241813c95e331dc8a04bbefb3ff72c9.jpg" 
+              alt="Artisanal Coffee"
+            />
+            {/* Decorative Elements */}
+            <motion.div 
+              animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+              className="absolute -bottom-10 -right-10 w-48 h-48 border-2 border-accent/20 rounded-[2rem] -z-0" 
+            />
+            <motion.div 
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-6 -right-6 w-24 h-24 bg-warm/10 rounded-full blur-2xl" 
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Clock, Coffee, Star, ChevronRight } from 'lucide-react';
 import { FadeIn } from './ui/FadeIn';
 export const Vibe = () => {
@@ -42,19 +43,37 @@ export const Vibe = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {experiences.map((item, idx) => (
-            <FadeIn key={item.title} delay={idx * 0.1}>
-              <div className="group h-full bg-white/5 rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-500 border border-white/5">
+            <motion.div
+              key={item.title}
+              initial={{ 
+                opacity: 0, 
+                x: idx % 2 === 0 ? -50 : 50, 
+                y: idx < 2 ? -50 : 50,
+                scale: 0.9 
+              }}
+              whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 1, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="group h-full bg-white/5 rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-500 border border-white/5 hover:shadow-2xl hover:shadow-accent/5">
                 <div className="h-48 overflow-hidden relative">
-                  <img
+                  <motion.img
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     src={item.img}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale-[0.2] contrast-[1.1]"
+                    className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
                 <div className="p-8">
-                  <div className="mb-4 p-3 bg-accent/10 w-fit rounded-xl">{item.icon}</div>
+                  <motion.div 
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="mb-4 p-3 bg-accent/10 w-fit rounded-xl"
+                  >
+                    {item.icon}
+                  </motion.div>
                   <h3 className="text-xl font-serif text-warm mb-3 italic">
                     {item.title}
                   </h3>
@@ -63,7 +82,7 @@ export const Vibe = () => {
                   </p>
                 </div>
               </div>
-            </FadeIn>
+            </motion.div>
           ))}
         </div>
       </div>

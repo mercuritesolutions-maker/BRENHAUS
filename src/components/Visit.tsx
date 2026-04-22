@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { MapPin, Clock, ChevronRight } from 'lucide-react';
 import { FadeIn } from './ui/FadeIn';
 
@@ -50,7 +51,13 @@ export const Visit = () => {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <div className="h-[500px] w-full bg-accent/5 rounded-[3rem] overflow-hidden shadow-inner relative border-8 border-white/5 shadow-2xl">
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="h-[500px] w-full bg-accent/5 rounded-[3rem] overflow-hidden shadow-inner relative border-8 border-white/5 shadow-2xl"
+            >
               <iframe 
                 title="Brenhaus Coffee Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15654.4!2d124.0!-12.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a84dfbe535976b%3A0x6e9a8f4b00000000!2sSan+Vicente+St%2C+Bogo+City%2C+Cebu!5e0!3m2!1sen!2sph!4v1713437500000!5m2!1sen!2sph"
@@ -60,7 +67,7 @@ export const Visit = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
-            </div>
+            </motion.div>
           </FadeIn>
         </div>
       </div>

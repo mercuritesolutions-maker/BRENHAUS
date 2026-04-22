@@ -19,7 +19,7 @@ export default async function handler(
 
   try {
     const data = await resend.emails.send({
-      from: 'Knoah Mari Orders <onboarding@resend.dev>',
+      from: 'Brenhaus Coffee Orders <onboarding@resend.dev>',
       to: [process.env.CONTACT_EMAIL_RECEIVER || 'le.advena08@gmail.com'],
       subject: `☕ New Online Order from ${name}`,
       html: `
